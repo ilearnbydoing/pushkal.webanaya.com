@@ -1,0 +1,18 @@
+.container {
+  max-width: 960px !important;}
+
+.bg-head-image{
+    background: no-repeat 0 0 url("../img/header-bg.jpg");
+    padding-bottom: 650px !important;
+  }
+  .logo-postion{position:absolute; width: 220px; height: 161px; z-index: 20;  left: 50%;
+  margin-left: -110px;
+  top: 8%;
+  margin-top: -50px;}
+  .head-image-wrap{position:absolute;; top:0; left:0; z-index: 0; display: block; }
+  .head-image-wrap img{display: block;}
+  .no-pad {padding: 0px !important;}
+
+.text-orange{ color: #ff9400;}
+
+.btn-blue{ background-color: #1E88E5 !important;}
