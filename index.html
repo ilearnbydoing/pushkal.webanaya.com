@@ -34,16 +34,17 @@ HEADER
 		<div class="row">
 			<div class="col-md-12 no-pad">
 				<div class="col pt-4 text-center">
-				<a href="#"><img src="assets/img/pushkal-logo.jpg" class="img-thumbnail logo-postion img-responsive" alt="Logo"></a>
+				<a href="#enquiry" class="d-none d-sm-block"><img src="assets/img/pushkal-logo.jpg" class="img-thumbnail logo-postion img-responsive" alt="Logo"></a>
 				<div class="head-image-wrap d-none d-sm-block">
 					<img src="assets/img/header-bg.jpg" alt="Pushkal Textiles" class="img-responsive">
 				</div>
+				<a href="#enquiry" class="d-md-none d-lg-block"><img src="assets/img/pushkal-logo.jpg" class="img-thumbnail img-responsive" alt="Logo"></a>
 				<img src="assets/img/header-bg.jpg" alt="Pushkal Textiles" class="img-responsive d-md-none d-lg-block">
 			</div>
 		</div>
 			<div class="col-md-12 text-center pt-4 pb-4 bg-warning">
 				<h3 class="display-5 font-weight-bold">Manufacturer & Supplier</h3>
-				<h3 class="display-5 font-italic font-weight-bold"><span class="bg-primary text-white p-2">Bed and Bath LINEN - Since 1999</span></h3>
+				<h5 class="font-italic"><span class="bg-primary text-white p-2">Bed and Bath LINEN - Since 1999</span></h5>
 
 			</div>
 		</div>
@@ -212,28 +213,7 @@ JAVASCRIPTS
     });
 </script>
 
-<!-- Disable animation on less than 1200px, change value if you like -->
 <script>
-AOS.init({
-  disable: function () {
-    var maxWidth = 1200;
-    return window.innerWidth < maxWidth;
-  }
-});
-
-
-// $("#contactForm").validator().on("submit", function (event) {
-//     if (event.isDefaultPrevented()) {
-//         // handle the invalid form...
-//         formError();
-//         submitMSG(false, "Did you fill in the form properly?");
-//     } else {
-//         // everything looks good!
-//         event.preventDefault();
-//         submitForm();
-//     }
-// });
-
 $("#contactForm").submit(function(event){
     // cancels the form submission
     event.preventDefault();
@@ -244,13 +224,14 @@ $("#contactForm").submit(function(event){
 function submitForm(){
     // Initiate Variables With Form Content
     var name = $("#name").val();
+    var email = $("#email").val();
     var phone = $("#phone").val();
-    var age = $("#age").val();
+    var company = $("#company").val();
 
     $.ajax({
         type: "POST",
         url: "form-process.php",
-        data: "name=" + name + "&phone=" + phone + "&age=" +age,
+        data: "name=" + name + "&phone=" + phone + "&email=" + email + "&company=" + company,
         success : function(text){
             if (text == "success"){
                 formSuccess();
@@ -275,14 +256,13 @@ function formError(){
 
 function submitMSG(valid, msg){
     if(valid){
-        var msgClasses = "h3 text-center tada animated text-success";
+        var msgClasses = "h3 text-center tada animated text-success text-white";
     } else {
         var msgClasses = "h3 text-center text-danger";
     }
     $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 }
 </script>
-
 
 </body>
 </html>
