@@ -3,8 +3,9 @@ $name = $_POST["name"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
 $company = $_POST["company"];
+$city = $_POST["city"];
 
-$EmailTo = "beemed2018@gmail.com,dinesh.hnh@gmail.com,durgesh@webanaya.com";
+$EmailTo = "pushkaltex@gmail.com,info@hnhtwenty.com,durgesh@webanaya.com";
 $EmailFrom = "info@hnhtwenty.com";
 $Subject = "Pushkal Textiles - You have received New Enquiry";
 
@@ -23,6 +24,10 @@ $Body .= "\n";
 
 $Body .= "Company: ";
 $Body .= $company;
+$Body .= "\n";
+
+$Body .= "City: ";
+$Body .= $city;
 $Body .= "\n";
 
 // send email

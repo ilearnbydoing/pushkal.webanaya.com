@@ -75,13 +75,13 @@ HEADER
 			</div>
 			<div class="col-md-4 text-center">
 				<img src="assets/img/sofa-cushions.jpg" alt="Bedsheets" class="img-thumbnail">
-				<button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Sofa Cushions</button>
+				<a href="#enquiry"><button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Sofa Cushions</button></a>
 		</div>
 	</div>
 		<div class="row mt-5 mb-5">
 			<div class="col-md-4 text-center">
 				<img src="assets/img/mattress-protectors.jpg" alt="Mattress Protectors" class="img-thumbnail">
-				<button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Mattress Protectors</button>
+				<a href="#enquiry"><button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Mattress Protectors</button></a>
 			</div>
 			<div class="col-md-4 text-center">
 				<img src="assets/img/shower-curtains.jpg" alt="Bedsheets" class="img-thumbnail">
@@ -89,13 +89,13 @@ HEADER
 			</div>
 			<div class="col-md-4 text-center">
 				<img src="assets/img/bath-robes.jpg" alt="Bath Robes" class="img-thumbnail">
-				<button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Bath Robes</button>
+				<a href="#enquiry"><button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Bath Robes</button></a>
 		</div>
 	</div>
 		<div class="row mt-5 mb-5">
 			<div class="col-md-4 text-center">
 				<img src="assets/img/duvets.png" alt="Duvets and Duvet Covers" class="img-thumbnail">
-				<button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Duvets and Duvet Covers</button>
+				<a href="#enquiry"><button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Duvets and Duvet Covers</button></a>
 			</div>
 			<div class="col-md-4 text-center">
 				<img src="assets/img/towels.jpg" alt="Towels" class="img-thumbnail">
@@ -103,7 +103,7 @@ HEADER
 			</div>
 			<div class="col-md-4 text-center">
 				<img src="assets/img/pillows.jpg" alt="Pillows" class="img-thumbnail">
-				<button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Pillows</button>
+				<a href="#enquiry"><button type="button" class="mt-2 mb-2 btn btn-small btn-blue text-white font-weight-bold">Pillows</button></a>
 		</div>
 	</div>
 </section>
@@ -113,8 +113,8 @@ HEADER
 	<div class="container h-100 tofront">
 		<div class="row mb-5">
 			<div class="col-md-12 text-center">
-				<h3 class="display-5 font-weight-bold">Contact Now For Samples</h3>
-				<h4>We Will Happy To Serve You</h4>
+				<h3 class="display-5 font-weight-bold">Contact Now For More Details</h3>
+				<h4>Happy To Serve You</h4>
 			</div>
 		</div>
 		<div class="row">
@@ -134,7 +134,10 @@ HEADER
 						              <input type="text" class="form-control" id="phone" name="phone" placeholder="Your contact no." required="">
 						            </div>
 						            <div class="form-group">
-						              <input type="text" class="form-control" id="company" name="company" placeholder="Company name" required="">
+						              <input type="text" class="form-control" id="company" name="company" placeholder="Company Name" required="">
+						            </div>
+						            <div class="form-group">
+						              <input type="text" class="form-control" id="city" name="city" placeholder="City Name" required="">
 						            </div>
 												<input type="hidden" name="_cc" value="info@helioshotelwares.com">
 						            <!-- <div class="form-group">
@@ -228,11 +231,12 @@ function submitForm(){
     var email = $("#email").val();
     var phone = $("#phone").val();
     var company = $("#company").val();
+    var city = $("#city").val();
 
     $.ajax({
         type: "POST",
         url: "form-process.php",
-        data: "name=" + name + "&phone=" + phone + "&email=" + email + "&company=" + company,
+        data: "name=" + name + "&phone=" + phone + "&email=" + email + "&company=" + company + "&city" + city,
         success : function(text){
             if (text == "success"){
                 formSuccess();
